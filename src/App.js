@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from './components/TodoComponents/TodoForm';
 
 const todoTasks = [
   {
@@ -47,6 +48,59 @@ class App extends React.Component {
   }
 
 
+  // Class methods to update state
+
+  addTask= (evt, item)=> {
+    evt.preventDefault();
+
+    // creating structure of new task being added to list
+
+    const newTask= {
+      name: item,
+      id: Date.now(),
+      completed: false
+    }
+
+    // setting the update of state when new task is added
+
+    this.setState({
+      todoTasks: [...this.state.todoTasks, newTask]
+    })
+
+  }
+
+  // changing state from not completed to completed when clicked on
+
+  toggleTask= taskId => { 
+
+    this.setState({
+      todoTasks: this.state.todoTasks.map(task => {
+        if(taskId === task.id){ //make sure what you are changing is the exact item/task
+          return{
+            ...task, // extends the properties of the object
+            completed: !item.completed  //changes completed from false to true
+          }
+        }
+
+        return task;
+      })
+    })
+
+  }
+
+  clearCompleted= evt =>{
+    evt.preventDefault();
+
+    this.setState({
+      // returns the tasks that haven't been completed and removes
+      // the ones that have been completed
+
+      todoTasks: this.state.todoTasks.filter(task => task.completed === false)
+    })
+
+  }
+
+
   render() {
 
     return (
@@ -54,6 +108,11 @@ class App extends React.Component {
         <h2>My Todo App</h2>
         <TodoList 
         tasks={this.state.todoTasks} 
+        toggleTask={this.toggleTask}
+        clearCompleted={this.clearCompleted}
+        />
+        <TodoForm 
+        addTask={this.addTask}
         />
       </div>
     );

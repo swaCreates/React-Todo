@@ -9,9 +9,9 @@ export default function TodoList(props) {
     return (
         <div className='todo-list'>
             {props.tasks.map(item=> {
-            return <Todo key={item.id} task={item} />
+            return <Todo key={item.id} task={item} toggleTask={props.toggleTask} />
             })}
-            <button className="clear-btn" >Clear Completed</button>
+            <button className="clear-btn" onClick={props.clearCompleted} >Clear Completed</button>
         </div>
     );
 };
