@@ -78,7 +78,7 @@ class App extends React.Component {
         if(taskId === task.id){ //make sure what you are changing is the exact item/task
           return{
             ...task, // extends the properties of the object
-            completed: !item.completed  //changes completed from false to true
+            completed: !task.completed  //changes completed from false to true
           }
         }
 
@@ -87,6 +87,8 @@ class App extends React.Component {
     })
 
   }
+
+  // event handler to clear what task have been completed
 
   clearCompleted= evt =>{
     evt.preventDefault();
@@ -104,15 +106,17 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
-        <h2>My Todo App</h2>
+      <div className='App'>
+        <div className='header'>
+          <h1>My TodoList App</h1>
+          <TodoForm 
+          addTask={this.addTask}
+          />
+        </div>
         <TodoList 
         tasks={this.state.todoTasks} 
         toggleTask={this.toggleTask}
         clearCompleted={this.clearCompleted}
-        />
-        <TodoForm 
-        addTask={this.addTask}
         />
       </div>
     );
