@@ -1,4 +1,5 @@
 import React from 'react';
+import './TodoForm.scss';
 import {Form, Input} from 'reactstrap';
 
 class TodoForm extends React.Component{
@@ -31,8 +32,8 @@ class TodoForm extends React.Component{
     render(){
         return(
             <div>
-                <Form onSubmit={this.submitTask} >
-                    <Input type='text' name='task' onChange={this.handleChanges} />
+                <Form className='form' onSubmit={this.submitTask} >
+                    <Input className='input' type='text' name='task' onChange={this.handleChanges} />
                     <button>Add</button>
                 </Form>
             </div>
