@@ -1,0 +1,26 @@
+.container{
+    padding: 1%;
+
+    p{
+        font-size: 1.2rem;
+        color: #D64550;
+    }
+
+    .task.completed{
+        text-decoration: line-through;
+        color: #D64550;
+    }
+
+    .task{
+        border: 1px solid #D64550;
+        border-radius: 3px;
+        padding: 2%;
+        width: 100%;
+    }
+
+    .task:hover{
+        cursor: pointer;
+    }
+
+}
+

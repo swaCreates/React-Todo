@@ -109,7 +109,7 @@ class App extends React.Component {
     return (
       <div className='App'>
         <div className='header'>
-          <h1>My TodoList App</h1>
+          <h1>Todo-List</h1>
           <TodoForm 
           addTask={this.addTask}
           />
