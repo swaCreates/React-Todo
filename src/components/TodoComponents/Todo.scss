@@ -12,14 +12,17 @@
     }
 
     .task{
-        border: 1px solid #D64550;
+        border-bottom: 1px solid #D64550;
+        border-right: 1px solid #D64550;
         border-radius: 3px;
-        padding: 2%;
+        padding: 3%;
         width: 100%;
     }
 
     .task:hover{
         cursor: pointer;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        border: none;
     }
 
 }
