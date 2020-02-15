@@ -3,38 +3,7 @@ import './App.scss';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 
-const todoTasks = [
-  {
-    name: 'Complete HW',
-    id: 1,
-    completed: false
-  },
-  {
-    name: 'Practice Piano',
-    id: 2,
-    completed: false
-  },
-  {
-    name: 'Practice Bass',
-    id: 3,
-    completed: false
-  },
-  {
-    name: 'Fix my bed',
-    id: 4,
-    completed: false
-  },
-  {
-    name: 'Do Laundry',
-    id: 5,
-    completed: false
-  },
-  {
-    name: 'Buy a Suit',
-    id: 6,
-    completed: false
-  }
-];
+const todoTasks = [];
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
